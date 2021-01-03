@@ -1,10 +1,13 @@
 import React, { useState, useEffect } from 'react'
 import {
   Container,
+  BoxUsers,
   BoxUser,
+  Number,
   Name,
   Email,
 } from './styles'
+import Header from '../components/header'
 import api from '../../services/api'
 
 export default function User() {
@@ -22,14 +25,18 @@ export default function User() {
 
   return (
     <Container>
-      {
-        users.map((user) => (
-          <BoxUser>
-            <Name>{user.name}</Name>
-            <Email>{user.email}</Email>
-          </BoxUser>
-        ))
-      }
+      <Header />
+      <BoxUsers>
+        {
+          users.map((user) => (
+            <BoxUser key={user.id}>
+              <Number>{user.id}</Number>
+              <Name>{user.name}</Name>
+              <Email>{user.email}</Email>
+            </BoxUser>
+          ))
+        }
+      </BoxUsers>
     </Container>
   )
 }
