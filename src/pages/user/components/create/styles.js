@@ -19,8 +19,8 @@ export const Container = styled(Modal)`
 `;
 
 export const BoxModal = styled.div`
-  width: 42%;
-  height: 500px;
+  width: 21%;
+  height: 411px;
   display: flex;
   flex-direction: column;
   padding: 0 1em;
@@ -52,7 +52,7 @@ export const Form = styled.form`
   flex: 1;
   background-color: transparent;
   padding-right: 4%;
-  padding-left: 4%;
+  padding-left: 12%;
 `;
 
 export const BoxTitle = styled.div`
@@ -79,7 +79,7 @@ export const BoxInput = styled.div`
 `;
 
 export const Input = styled.input`
-  width: 160px;
+  width: 285px;
   height: 35px;
   border-style: none;
   border: 1px solid ${(props) => props.border || '#cecece'};
@@ -92,4 +92,16 @@ export const Input = styled.input`
     font-weight: 300;
     color: #aeaeae;
   }
+`;
+
+export const ButtonAdd = styled.button`
+  width: 100px;
+  height: 44px;
+  background-color: #47affc;
+  border-style: none;
+  border-radius: 6px;
+  color: white;
+  font-size: 1em;
+  font-weight: 300;
+  cursor: pointer;
 `;

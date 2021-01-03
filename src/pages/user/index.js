@@ -38,6 +38,20 @@ export default function User() {
     setModalAdd(false);
   };
 
+  const createUser = async () => {
+    try {
+      const response = await api.post('/user/create', {
+        name: name,
+        email: email,
+        password: password,
+      })
+
+      console.log(response)
+    } catch (error) {
+      console.log(error)
+    }
+  }
+
   return (
     <Container>
       <Header onClick={openModalAdd} />
@@ -57,6 +71,7 @@ export default function User() {
         error={error}
         setError={setError}
         onRequestClose={CloseModalAdd}
+        onSubmit={createUser}
         name={name}
         setName={setName}
         email={email}

@@ -10,6 +10,7 @@ import {
   Title,
   BoxInput,
   Input,
+  ButtonAdd,
 } from './styles';
 import Times from '../../../../assets/svg/times'
 
@@ -74,6 +75,7 @@ const create = (props) => (
               }}
             />
           </BoxInput>
+          <ButtonAdd type="submit">create</ButtonAdd>
         </Form>
       </BoxForm>
     </BoxModal>
