@@ -29,7 +29,7 @@ export const BoxButton = styled.div`
   padding-right: 20px;
 `;
 
-export const ButtonAdd = styled.button`
+export const ButtonAdd = styled.div`
   width: 100px;
   height: 40px;
   background-color: white;
@@ -37,6 +37,10 @@ export const ButtonAdd = styled.button`
   color: #47affc;
   border-radius: 6px;
   transition: 0.5s ease;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 0.9em;
   cursor: pointer;
   &:hover{
     background-color: #47affc;

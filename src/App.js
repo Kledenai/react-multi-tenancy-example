@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import Modal from 'react-modal';
 import { createGlobalStyle } from 'styled-components';
 import Routes from './routes';
 
@@ -32,6 +33,10 @@ const GlobalStyle = createGlobalStyle`
 `;
 
 const App = () => {
+  useEffect(() => {
+    Modal.setAppElement('body');
+  }, []);
+
   return (
     <>
       <GlobalStyle />

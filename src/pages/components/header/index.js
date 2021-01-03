@@ -7,13 +7,13 @@ import {
   ButtonAdd
 } from './styles'
 
-const header = () => (
+const header = (props) => (
   <Container>
     <BoxTitle>
       <Title>Multi Tenancy Example</Title>
     </BoxTitle>
     <BoxButton>
-      <ButtonAdd>Add User</ButtonAdd>
+      <ButtonAdd onClick={props.onClick}>add user</ButtonAdd>
     </BoxButton>
   </Container>
 )

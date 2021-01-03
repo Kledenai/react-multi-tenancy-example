@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect } from 'react';
 import {
   Container,
   BoxUsers,
@@ -6,12 +6,19 @@ import {
   Number,
   Name,
   Email,
-} from './styles'
-import Header from '../components/header'
-import api from '../../services/api'
+} from './styles';
+import Header from '../components/header';
+import ModalCreate from './components/create';
+import api from '../../services/api';
 
 export default function User() {
-  const [users, setUsers] = useState([])
+  const [users, setUsers] = useState([]);
+  const [modalAdd, setModalAdd] = useState(false);
+  const [error, setError] = useState({});
+
+  const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
 
   useEffect(() => {
     const loadUsers = async () => {
@@ -23,9 +30,17 @@ export default function User() {
     loadUsers()
   }, [])
 
+  const openModalAdd = () => {
+    setModalAdd(true)
+  }
+
+  const CloseModalAdd = () => {
+    setModalAdd(false);
+  };
+
   return (
     <Container>
-      <Header />
+      <Header onClick={openModalAdd} />
       <BoxUsers>
         {
           users.map((user) => (
@@ -37,6 +52,18 @@ export default function User() {
           ))
         }
       </BoxUsers>
+      <ModalCreate
+        visible={modalAdd}
+        error={error}
+        setError={setError}
+        onRequestClose={CloseModalAdd}
+        name={name}
+        setName={setName}
+        email={email}
+        setEmail={setEmail}
+        password={password}
+        setPassword={setPassword}
+      />
     </Container>
   )
 }
